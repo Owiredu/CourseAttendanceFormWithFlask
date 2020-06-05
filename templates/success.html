@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATTENDANCE FORM</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='assets/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='assets/css/styles.min.css')}}">
+</head>
+
+<body>
+    <div class="register-photo">
+        <div class="form-container">
+            <div class="image-holder"></div>
+            <form>
+                <div class="alert alert-success"><strong>{{success_msg['msg']}}</strong></div>
+            </form>
+        </div>
+        <br />
+        <div class="table-responsive form-container bg-white">
+            <div class="form-container text-center bg-white">
+                <h3>TODAY'S ATTENDANCE DATA</h3>
+            </div>
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <th>COUNT</th>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>COURSE</th>
+                        <th>PHONE</th>
+                        <th>SUBMISSION TIME</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in success_msg['data'] %}
+                    <tr>
+                        <td>{{ row[0] }}</td>
+                        <td>{{ row[1] }}</td>
+                        <td>{{ row[2] }}</td>
+                        <td>{{ row[3] }}</td>
+                        <td>{{ row[4] }}</td>
+                        <td>{{ row[5] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="{{url_for('static', filename='assets/js/jquery.min.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/bootstrap/js/bootstrap.min.js')}}"></script>
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+# define return codes
+SUCCESS = 0
+DUPLICATE_SUBMISSION = -1
+MISSING_ID = 1
+FATAL_ERROR = -2

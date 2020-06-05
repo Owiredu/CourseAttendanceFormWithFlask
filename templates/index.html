@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATTENDANCE FORM</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='assets/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='assets/css/styles.min.css')}}">
+</head>
+
+<body>
+    <div class="register-photo">
+        <div class="form-container">
+            <div class="image-holder"></div>
+            <form method="POST" action="{{url_for('login')}}">
+                <h2 class="text-center"><strong>ATTENDANCE FORM</strong></h2>
+                <!-- <div class="alert alert-danger" hidden><strong>Submission Failed!</strong></div> -->
+                <div class="form-group">
+                    <select name="courses" class="custom-select" required>
+                        <option selected>Select Course</option>
+                        <option value="CSCD201 - Information Systems">CSCD201 - Information Systems</option>
+                        <option value="CSCD205 - Programming I (With C++)">CSCD205 - Programming I (With C++)</option>
+                        <option value="CSCD207 - Numerical Methods">CSCD207 - Numerical Methods</option>
+                        <option value="CSCD211 - Computer Organization and Architecture">CSCD211 - Computer Organization
+                            and Architecture</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input class="form-control bg-white" type="text" name="name" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <input class="form-control bg-white" type="text" name="id" placeholder="ID" pattern="[0-9]{8}"
+                        required>
+                </div>
+                <div class="form-group">
+                    <input class="form-control bg-white" type="tel" pattern="\+[0-9]{12}|[0-9]{10}" name="phone"
+                        placeholder="Phone" required>
+                    <!-- <span style="font-size: small; color: gray">Phone format: +233xxxxxxxxx&nbspor&nbsp0xxxxxxxxx </span> -->
+                </div>
+                <p>Selection type of operation:</p>
+                <div class="form-group">
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" class="custom-control-input" id="operationType0" name="operationType"
+                            value="insert" checked>
+                        <label class="custom-control-label" for="operationType0">New Entry</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" class="custom-control-input" id="operationType1" name="operationType"
+                            value="edit">
+                        <label class="custom-control-label" for="operationType1">Edit Entry</label>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <button class="btn btn-success btn-block" type="submit">Submit</button>
+                    <button class="btn btn-danger btn-block" type="reset" style="margin-top: 15px;">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="{{url_for('static', filename='assets/js/jquery.min.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/bootstrap/js/bootstrap.min.js')}}"></script>
+</body>
+
+</html>
