@@ -1,1 +1,1 @@
-web: gunicorn course-attendance-form:app
+web: gunicorn index:app
