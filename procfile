@@ -1,1 +1,0 @@
-web: gunicorn course-attendance-form.wsgi --log-file
