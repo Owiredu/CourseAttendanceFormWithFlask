@@ -1,1 +1,2 @@
 Flask==1.1.2
+gunicorn==47.1.1
